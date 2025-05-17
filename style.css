@@ -25,11 +25,12 @@ body {
     padding: 10px;
     display: flex;
     align-items: center;
-    height: 200px;
+    height: 220px;
     width: 100%;
     background-color: rgb(52, 59, 61);
     border-radius: 10px;
     transition: ease-out .15s;
+    margin-bottom: 10px;
 }
 
 .subsite:hover {
@@ -37,13 +38,13 @@ body {
     background-color: rgba(52, 59, 61, .7);
 }
 
-.subsite > img {
+.subsite>img {
     height: 100%;
     aspect-ratio: 1;
     border-radius: 7px;
 }
 
-.subsite > .content {
+.content {
     overflow: scroll;
     height: 100%;
     width: 100%;
@@ -53,18 +54,30 @@ body {
     padding: 10px;
 }
 
-.content > .name {
+.topbar {
+    height: 20px;
+    display: flex;
+}
+
+.name {
     font-weight: 700;
 }
 
-.content > .id {
+.id {
     color: rgb(108, 117, 117);
     font-size: 15px;
-    vertical-align: middle;
     margin-left: 30px;
 }
 
-.content > .desc {
+.date {
+    flex: 1;
+    text-align: right;
+    font-size: 15px;
+    font-weight: 0;
+    color: rgb(108, 117, 117);
+}
+
+.desc {
     margin-top: 15px;
     margin-left: 10px;
     font-size: 15px;
