@@ -1,4 +1,3 @@
-
 * {
     padding: 0;
     margin: 0;
@@ -15,4 +14,31 @@ body {
     font-family: 'Cousine';
     font-size: 20px;
     color: white
+}
+
+#title {
+    margin-bottom: 20px;
+}
+
+.subsite {
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    background-color: rgb(52, 59, 61);
+    border-radius: 10px;
+    transition: ease-out .15s;
+}
+
+.subsite:hover {
+    height: 250px;
+    background-color: rgba(52, 59, 61, .7);
+}
+
+.subsite>img {
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 7px;
 }
