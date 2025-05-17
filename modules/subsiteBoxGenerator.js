@@ -1,9 +1,4 @@
-
-
-
-
-
-function generate(path, name, icon, desc, date) {
+export default function generate(path, name, icon, desc, date) {
 
     const box = document.createElement("a")
     box.classList.add("subsite")
@@ -50,4 +45,4 @@ function generate(path, name, icon, desc, date) {
 
 }
 
-generate("froggy-talking-gif", "Froggy Talking Gif", "assets/images/froggy_talking.gif", "lorem ipsun", "today")
+//generate("froggy-talking-gif", "Froggy Talking Gif", "assets/images/froggy_talking.gif", "lorem ipsun", "today")

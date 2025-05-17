@@ -37,7 +37,23 @@
     </a>
     -->
 
-    <script src="modules/subsiteBoxGenerator.js"></script>
+    <script type="module">
+        import generate from "/modules/subsiteBoxGenerator.js"
+
+        //generate("froggy-talking-gif", "Froggy Talking Gif", "assets/images/froggy_talking.gif", "A gif of Froggy talking, taken from ENA: Dream BBQ", "2025-05-16")
+        //generate("roblox-brickcolors", "Roblox Brickcolors", "assets/images/froggy_talking.gif", "lorem ipsun", "2025-05-17")
+
+        fetch("sites.json").then(response => {
+            return response.json()
+        }).then(data => {
+ 
+            data.forEach((site, idx) => {
+                generate(site.path, site.name, site.icon, site.description, site.date)
+            })
+
+        })
+
+    </script>
 </body>
 
 </html>
