@@ -17,7 +17,7 @@ body {
 }
 
 #title {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .subsite {
@@ -37,8 +37,41 @@ body {
     background-color: rgba(52, 59, 61, .7);
 }
 
-.subsite>img {
+.subsite > img {
     height: 100%;
     aspect-ratio: 1;
     border-radius: 7px;
+}
+
+.subsite > .content {
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+    margin: 10px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.content > .name {
+    font-weight: 700;
+}
+
+.content > .id {
+    color: rgb(108, 117, 117);
+    font-size: 15px;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+
+.content > .desc {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 0;
+    color: ghostwhite;
+}
+
+a {
+    text-decoration: none;
 }
