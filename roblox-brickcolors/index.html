@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Brickcolors</title>
+    <link rel="shortcut icon" href="../../assets/images/brick.png" type="image/x-icon">
+
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            padding: 5px;
+            margin: 0;
+            background-color: rgb(30, 35, 37);
+        }
+
+        .brick {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            aspect-ratio: 16/9;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <script>
+
+        fetch("colors.json").then(response => {
+            return response.json()
+        }).then(data => {
+
+            const body = document.getElementById("body")
+
+            Object.entries(data).forEach(([name, rgb]) => {
+
+                const split = rgb.split(",")
+                const r = parseInt(split[0])
+                const g = parseInt(split[1])
+                const b = parseInt(split[2])
+
+                let luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // https://stackoverflow.com/questions/12043187/how-to-check-if-hex-color-is-too-black
+
+                const brick = document.createElement("div")
+                brick.classList.add("brick")
+                brick.style.background = "rgb(" + rgb + ")"
+                brick.innerHTML = name
+
+                brick.style.color = luma < 128 ? "white" : "black"
+
+                body.appendChild(brick)
+
+            })
+        })
+
+    </script>
+</body>
+
+</html>
