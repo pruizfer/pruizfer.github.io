@@ -48,6 +48,10 @@
         }).then(data => {
  
             data.forEach((site, idx) => {
+                if (site.hidden) {
+                    return
+                }
+
                 generate(site.path, site.name, site.icon, site.description, site.date)
             })
 
